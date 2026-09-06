@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hebert & Carol — Nos casamos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="gate-active">
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="fern" viewBox="0 0 120 400">
+    <path d="M60 400 C58 300 56 200 50 20" stroke="var(--gold)" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <ellipse cx="38" cy="60" rx="26" ry="9" transform="rotate(-35 38 60)"/>
+    <ellipse cx="70" cy="90" rx="24" ry="8" transform="rotate(35 70 90)"/>
+    <ellipse cx="34" cy="130" rx="28" ry="9" transform="rotate(-32 34 130)"/>
+    <ellipse cx="74" cy="160" rx="26" ry="9" transform="rotate(32 74 160)"/>
+    <ellipse cx="32" cy="200" rx="30" ry="10" transform="rotate(-30 32 200)"/>
+    <ellipse cx="78" cy="235" rx="28" ry="9" transform="rotate(30 78 235)"/>
+    <ellipse cx="30" cy="275" rx="32" ry="10" transform="rotate(-28 30 275)"/>
+    <ellipse cx="80" cy="310" rx="30" ry="10" transform="rotate(28 80 310)"/>
+    <ellipse cx="28" cy="350" rx="34" ry="11" transform="rotate(-25 28 350)"/>
+  </symbol>
+  <symbol id="sprig" viewBox="0 0 160 34">
+    <path d="M10 17 L150 17" stroke="var(--gold)" stroke-width="1.1" fill="none"/>
+    <circle cx="80" cy="17" r="3.2" fill="var(--gold)"/>
+    <circle cx="66" cy="12" r="2.2" fill="var(--gold)" opacity="0.8"/>
+    <circle cx="94" cy="12" r="2.2" fill="var(--gold)" opacity="0.8"/>
+    <circle cx="58" cy="22" r="1.8" fill="var(--gold)" opacity="0.6"/>
+    <circle cx="102" cy="22" r="1.8" fill="var(--gold)" opacity="0.6"/>
+  </symbol>
+</svg>
+
+<button class="music-toggle" id="musicToggle" aria-label="Pausar o reproducir música">
+  <div class="music-bars"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+</button>
+<audio id="bgMusic" loop preload="none">
+  <source src="[URL-de-tu-cancion.mp3]" type="audio/mpeg">
+</audio>
+
+<div class="gate" id="gate">
+  <div class="envelope-wrap">
+    <div class="envelope" id="envelope">
+      <div class="letter-card"><div class="letter-line">Tienen el honor de asistir</div></div>
+      <div class="env-body"></div>
+      <div class="env-address"><div class="to">Para</div><div class="names-small display">Los invitados de honor</div></div>
+      <div class="env-flap"></div>
+      <div class="seal"><svg viewBox="0 0 24 24"><path d="M12 3 L12 12 M6 21 L18 21 M8 21 C8 15.5 9.6 12 12 12 C14.4 12 16 15.5 16 21" stroke-linecap="round"/></svg></div>
+    </div>
+  </div>
+  <div class="gate-hint">Toca el sello para abrir</div>
+</div>
+
+<div class="hero">
+  <div class="hero-frame">
+    <div class="corner tl"><svg viewBox="0 0 34 34"><path d="M1 20 L1 1 L20 1"/></svg></div>
+    <div class="corner tr"><svg viewBox="0 0 34 34"><path d="M1 20 L1 1 L20 1"/></svg></div>
+    <div class="corner bl"><svg viewBox="0 0 34 34"><path d="M1 20 L1 1 L20 1"/></svg></div>
+    <div class="corner br"><svg viewBox="0 0 34 34"><path d="M1 20 L1 1 L20 1"/></svg></div>
+  </div>
+  <svg class="laurel" viewBox="0 0 280 90" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 45 Q60 20 130 45" />
+    <path d="M20 45 Q60 70 130 45" />
+    <path d="M260 45 Q220 20 150 45" />
+    <path d="M260 45 Q220 70 150 45" />
+  </svg>
+  <div class="eyebrow">Con inmensa alegría, les invitamos a la boda de</div>
+  <h1 class="names display">Hebert<span class="amp">&amp;</span>Carol</h1>
+  <div class="full-names">Hebert Godofredo Cárdenas Arrieta &amp; Stephany Carol Hoppen Núñez</div>
+  <p class="hero-quote">"Hoy decidimos escribir, juntos, el capítulo más importante de nuestra historia — y queremos compartirlo con ustedes."</p>
+  <div class="hero-date">18 de septiembre de 2026 — Pilcomayo, Junín</div>
+  <div class="countdown">
+    <div class="cd-unit"><div class="cd-num" id="cd-days">00</div><div class="cd-label">Días</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">Horas</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-mins">00</div><div class="cd-label">Min</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-secs">00</div><div class="cd-label">Seg</div></div>
+  </div>
+</div>
+
+<section class="story reveal">
+  <svg class="section-icon" viewBox="0 0 24 24"><path d="M12 20 C12 20 3 14 3 8 C3 5 5.5 3 8 3 C10 3 11.5 4.2 12 6 C12.5 4.2 14 3 16 3 C18.5 3 21 5 21 8 C21 14 12 20 12 20 Z" stroke-linejoin="round"/></svg>
+  <div class="section-label">Nuestra historia</div>
+  <h2 class="section-title display">Una velada para recordar</h2>
+  <svg class="sprig"><use href="#sprig"/></svg>
+  <p>Con el corazón lleno de alegría, queremos compartir este día tan especial con quienes más queremos. Los esperamos para celebrar juntos el inicio de esta nueva etapa.</p>
+</section>
+
+<section class="blessing reveal">
+  <svg class="section-icon" viewBox="0 0 24 24"><circle cx="9" cy="14" r="5.5"/><circle cx="15" cy="14" r="5.5"/></svg>
+  <div class="section-label">Con la bendición de Dios y de</div>
+  <h2 class="section-title display">Nuestros padres</h2>
+  <svg class="sprig"><use href="#sprig"/></svg>
+  <div class="card-wrap">
+    <div class="card">
+      <div class="parents-grid">
+        <div class="parents-col">
+          <div class="parents-kicker">Padres de la novia</div>
+          <div class="parent-name">Carlos B. Hoppen<br>Rocío M. Núñez Cunyas</div>
+        </div>
+        <div class="parents-col">
+          <div class="parents-kicker">Padres del novio</div>
+          <div class="parent-name">Mauro D. Cárdenas Meza<br>Felícita Arrieta Pacheco</div>
+        </div>
+      </div>
+      <div class="padrinos">
+        <div class="parents-kicker">Padrinos</div>
+        <div class="parent-name">Luz Agnes Yurivilca Salomon &amp; Wiliam Silva Toro</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="venue-icon">
+    <svg viewBox="0 0 24 24"><path d="M12 2 L12 8 M12 5 L15 5 M12 5 L9 5 M6 22 L6 12 L12 8 L18 12 L18 22 M9 22 L9 16 L15 16 L15 22" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="section-label">Ceremonia</div>
+  <div class="venue-name">Las Vegas de Pilcomayo</div>
+  <svg class="sprig"><use href="#sprig"/></svg>
+  <div class="card-wrap">
+    <div class="card">
+      <div class="venue-meta">12:00 h<br>Pje. Ángel Mercedes<br>Pilcomayo, Junín</div>
+      <div class="venue-actions">
+        <a class="btn-outline" id="mapLink1" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 21 C12 21 5 14 5 9 A7 7 0 0 1 19 9 C19 14 12 21 12 21 Z M12 12 A3 3 0 1 0 12 6 A3 3 0 0 0 12 12 Z"/></svg>
+          Cómo llegar
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="venue-icon">
+    <svg viewBox="0 0 24 24"><path d="M6 3 L9 11 C9 14 6.5 15 6.5 15 M6 3 L3 3 M9 11 L18 11 M18 11 L15 3 M18 11 C18 14 20.5 15 20.5 15 M6.5 15 L6.5 21 M17.5 15 L17.5 21 M4 21 L9 21 M15 21 L21 21" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-18 12 12)"/></svg>
+  </div>
+  <div class="section-label">Recepción</div>
+  <div class="venue-name">Las Vegas de Pilcomayo</div>
+  <svg class="sprig"><use href="#sprig"/></svg>
+  <div class="card-wrap">
+    <div class="card">
+      <div class="venue-meta">13:30 h<br>Pje. Ángel Mercedes<br>Pilcomayo, Junín</div>
+      <div class="venue-actions">
+        <a class="btn-outline" id="mapLink2" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 21 C12 21 5 14 5 9 A7 7 0 0 1 19 9 C19 14 12 21 12 21 Z M12 12 A3 3 0 1 0 12 6 A3 3 0 0 0 12 12 Z"/></svg>
+          Cómo llegar
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="action-row">
+    <a class="action-link" id="calendarLink" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 9 L21 9 M8 3 L8 7 M16 3 L16 7" stroke-linecap="round"/></svg>
+      Agregar al calendario
+    </a>
+  </div>
+</section>
+
+<section class="reveal">
+  <svg class="section-icon" viewBox="0 0 24 24"><path d="M6 3 L18 3 M6 21 L18 21 M6 3 C6 9 12 10 12 12 C12 14 6 15 6 21 M18 3 C18 9 12 10 12 12 C12 14 18 15 18 21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="section-label">El itinerario</div>
+  <h2 class="section-title display">Cómo se vivirá el día</h2>
+  <svg class="sprig"><use href="#sprig"/></svg>
+  <div class="itinerary">
+    <div class="it-row">
+      <div class="it-dot-col"><div class="it-dot"></div><div class="it-line"></div></div>
+      <div class="it-content">
+        <div class="it-title">Ceremonia</div>
+        <div class="it-desc">Iniciamos la celebración</div>
+      </div>
+    </div>
+    <div class="it-row">
+      <div class="it-dot-col"><div class="it-dot"></div><div class="it-line"></div></div>
+      <div class="it-content">
+        <div class="it-title">Recepción</div>
+        <div class="it-desc">Bienvenida e ingreso de los novios</div>
+      </div>
+    </div>
+    <div class="it-row">
+      <div class="it-dot-col"><div class="it-dot"></div><div class="it-line"></div></div>
+      <div class="it-content">
+        <div class="it-title">Brindis</div>
+        <div class="it-desc">Un momento para celebrar juntos</div>
+      </div>
+    </div>
+    <div class="it-row">
+      <div class="it-dot-col"><div class="it-dot"></div><div class="it-line"></div></div>
+      <div class="it-content">
+        <div class="it-title">Cena</div>
+        <div class="it-desc">Compartiendo mesa con familia y amigos</div>
+      </div>
+    </div>
+    <div class="it-row">
+      <div class="it-dot-col"><div class="it-dot"></div></div>
+      <div class="it-content">
+        <div class="it-title">Fiesta</div>
+        <div class="it-desc">Baile y celebración hasta el final</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gift reveal">
+  <svg class="section-icon" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M3 9 L21 9 M12 9 L12 21 M12 9 C10 5 6 4 6 7 C6 9 9 9 12 9 M12 9 C14 5 18 4 18 7 C18 9 15 9 12 9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="section-label">Un detalle</div>
+  <h2 class="section-title display">Sobre los regalos</h2>
+  <svg class="sprig"><use href="#sprig"/></svg>
+  <div class="card-wrap">
+    <div class="card">
+      <p>Agradecemos infinitamente su presencia — ese es el regalo que más valoramos. Si desean tener un gesto adicional con nosotros, hemos dispuesto una lluvia de sobres el día de la celebración.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dresscode reveal">
+  <svg class="section-icon" viewBox="0 0 24 24"><path d="M12 12 L4 6 C3 5.3 3 7 4 9 C5 11 8 12 12 12 C16 12 19 11 20 9 C21 7 21 5.3 20 6 L12 12 Z M12 12 C10 14 9 17 9 19 M12 12 C14 14 15 17 15 19" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.4" fill="var(--gold)"/></svg>
+  <div class="section-label">Dress Code</div>
+  <h2 class="section-title display">Formal / Elegante</h2>
+  <svg class="sprig"><use href="#sprig"/></svg>
+  <div class="card-wrap">
+    <div class="card">
+      <p>Les pedimos apoyarnos con el dress code para que todo luzca en armonía el día de la celebración.</p>
+      <div class="pearl-note">
+        <div class="pearl-swatch"></div>
+        <span>La novia vestirá color perla — por favor evitar este tono</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <svg class="bot-footer" viewBox="0 0 120 400"><use href="#fern"/></svg>
+  <div class="footer-note display">Con todo nuestro cariño</div>
+  <p class="credit">HEBERT &amp; CAROL · 18·09·2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
