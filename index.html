@@ -18,15 +18,15 @@
 <svg width="0" height="0" style="position:absolute">
   <symbol id="fern" viewBox="0 0 120 400">
     <path d="M60 400 C58 300 56 200 50 20" stroke="var(--gold)" stroke-width="1.5" fill="none" opacity="0.7"/>
-    <ellipse cx="38" cy="60" rx="26" ry="9" transform="rotate(-35 38 60)"/>
-    <ellipse cx="70" cy="90" rx="24" ry="8" transform="rotate(35 70 90)"/>
-    <ellipse cx="34" cy="130" rx="28" ry="9" transform="rotate(-32 34 130)"/>
-    <ellipse cx="74" cy="160" rx="26" ry="9" transform="rotate(32 74 160)"/>
-    <ellipse cx="32" cy="200" rx="30" ry="10" transform="rotate(-30 32 200)"/>
-    <ellipse cx="78" cy="235" rx="28" ry="9" transform="rotate(30 78 235)"/>
-    <ellipse cx="30" cy="275" rx="32" ry="10" transform="rotate(-28 30 275)"/>
-    <ellipse cx="80" cy="310" rx="30" ry="10" transform="rotate(28 80 310)"/>
-    <ellipse cx="28" cy="350" rx="34" ry="11" transform="rotate(-25 28 350)"/>
+    <ellipse cx="38" cy="60" rx="26" ry="9" transform="rotate(-35 38 60)" fill="var(--gold)"/>
+    <ellipse cx="70" cy="90" rx="24" ry="8" transform="rotate(35 70 90)" fill="var(--gold)"/>
+    <ellipse cx="34" cy="130" rx="28" ry="9" transform="rotate(-32 34 130)" fill="var(--gold)"/>
+    <ellipse cx="74" cy="160" rx="26" ry="9" transform="rotate(32 74 160)" fill="var(--gold)"/>
+    <ellipse cx="32" cy="200" rx="30" ry="10" transform="rotate(-30 32 200)" fill="var(--gold)"/>
+    <ellipse cx="78" cy="235" rx="28" ry="9" transform="rotate(30 78 235)" fill="var(--gold)"/>
+    <ellipse cx="30" cy="275" rx="32" ry="10" transform="rotate(-28 30 275)" fill="var(--gold)"/>
+    <ellipse cx="80" cy="310" rx="30" ry="10" transform="rotate(28 80 310)" fill="var(--gold)"/>
+    <ellipse cx="28" cy="350" rx="34" ry="11" transform="rotate(-25 28 350)" fill="var(--gold)"/>
   </symbol>
   <symbol id="sprig" viewBox="0 0 160 34">
     <path d="M10 17 L150 17" stroke="var(--gold)" stroke-width="1.1" fill="none"/>
@@ -38,6 +38,9 @@
   </symbol>
   <symbol id="tear" viewBox="0 0 400 40" preserveAspectRatio="none">
     <path d="M0,0 L0,18 L20,9 L40,22 L60,7 L80,20 L100,6 L120,24 L140,11 L160,26 L180,8 L200,19 L220,9 L240,24 L260,6 L280,18 L300,10 L320,22 L340,8 L360,20 L380,12 L400,18 L400,0 Z" fill="var(--bg)"/>
+  </symbol>
+  <symbol id="wave" viewBox="0 0 400 40" preserveAspectRatio="none">
+    <path d="M0,0 L400,0 L400,18 C375,30 325,6 300,18 C275,30 225,6 200,18 C175,30 125,6 100,18 C75,30 25,6 0,18 Z" fill="var(--true-green)"/>
   </symbol>
 </svg>
 
@@ -88,7 +91,6 @@
 </div>
 
 <div class="photo-break">
-  <svg class="photo-fern pf-left" viewBox="0 0 120 400"><use href="#fern"/></svg>
   <div class="photo-card-wrap">
     <div class="photo-card">
       <img src="fotos/Foto-1.jpeg" alt="Hebert y Carol">
@@ -97,6 +99,9 @@
 </div>
 
 <section class="story reveal framed tone-white">
+  <svg class="section-fern top-left" viewBox="0 0 120 400"><use href="#fern"/></svg>
+  <div class="section-wave top"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><use href="#wave"/></svg></div>
+
   <div class="section-frame">
     <div class="corner tl"><svg viewBox="0 0 34 34"><path d="M1 20 L1 1 L20 1"/></svg></div>
     <div class="corner tr"><svg viewBox="0 0 34 34"><path d="M1 20 L1 1 L20 1"/></svg></div>
@@ -108,9 +113,11 @@
   <h2 class="section-title display">Una velada para recordar</h2>
   <svg class="sprig"><use href="#sprig"/></svg>
   <p>Con el corazón lleno de alegría, queremos compartir este día tan especial con quienes más queremos. Los esperamos para celebrar juntos el inicio de esta nueva etapa.</p>
+  <div class="section-wave bottom"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><use href="#wave"/></svg></div>
 </section>
 
 <section class="blessing reveal">
+  <svg class="section-fern top-right" viewBox="0 0 120 400"><use href="#fern"/></svg>
   <svg class="section-icon" viewBox="0 0 24 24"><circle cx="9" cy="14" r="5.5"/><circle cx="15" cy="14" r="5.5"/></svg>
   <div class="section-label">Con la bendición de Dios y de</div>
   <h2 class="section-title display">Nuestros padres</h2>
@@ -136,7 +143,6 @@
 </section>
 
 <div class="photo-break">
-  <svg class="photo-fern pf-right" viewBox="0 0 120 400"><use href="#fern"/></svg>
   <div class="photo-card-wrap">
     <div class="photo-card">
       <img src="fotos/Foto-4.jpeg" alt="Hebert y Carol">
@@ -144,7 +150,10 @@
   </div>
 </div>
 
-<section class="reveal tone-white">
+<section class="ceremonia reveal tone-white">
+  <svg class="section-fern bottom-right" viewBox="0 0 120 400"><use href="#fern"/></svg>
+  <div class="section-wave top"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><use href="#wave"/></svg></div>
+
   <div class="venue-icon">
     <svg viewBox="0 0 24 24"><path d="M12 2 L12 8 M12 5 L15 5 M12 5 L9 5 M6 22 L6 12 L12 8 L18 12 L18 22 M9 22 L9 16 L15 16 L15 22" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
@@ -162,9 +171,11 @@
       </div>
     </div>
   </div>
+  <div class="section-wave bottom"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><use href="#wave"/></svg></div>
 </section>
 
-<section class="reveal">
+<section class="recepcion reveal">
+  <svg class="section-fern top-left" viewBox="0 0 120 400"><use href="#fern"/></svg>
   <div class="venue-icon">
     <svg viewBox="0 0 24 24"><path d="M6 3 L9 11 C9 14 6.5 15 6.5 15 M6 3 L3 3 M9 11 L18 11 M18 11 L15 3 M18 11 C18 14 20.5 15 20.5 15 M6.5 15 L6.5 21 M17.5 15 L17.5 21 M4 21 L9 21 M15 21 L21 21" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-18 12 12)"/></svg>
   </div>
@@ -191,7 +202,6 @@
 </section>
 
 <div class="photo-break">
-  <svg class="photo-fern pf-left" viewBox="0 0 120 400"><use href="#fern"/></svg>
   <div class="photo-card-wrap">
     <div class="photo-card">
       <img src="fotos/Foto-2.jpeg" alt="Hebert y Carol">
@@ -200,6 +210,9 @@
 </div>
 
 <section class="reveal framed tone-white">
+  <svg class="section-fern bottom-right" viewBox="0 0 120 400"><use href="#fern"/></svg>
+  <div class="section-wave top"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><use href="#wave"/></svg></div>
+
   <div class="section-frame">
     <div class="corner tl"><svg viewBox="0 0 34 34"><path d="M1 20 L1 1 L20 1"/></svg></div>
     <div class="corner tr"><svg viewBox="0 0 34 34"><path d="M1 20 L1 1 L20 1"/></svg></div>
@@ -247,9 +260,11 @@
       </div>
     </div>
   </div>
+  <div class="section-wave bottom"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><use href="#wave"/></svg></div>
 </section>
 
 <section class="gift reveal">
+  <svg class="section-fern bottom-left" viewBox="0 0 120 400"><use href="#fern"/></svg>
   <svg class="section-icon" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M3 9 L21 9 M12 9 L12 21 M12 9 C10 5 6 4 6 7 C6 9 9 9 12 9 M12 9 C14 5 18 4 18 7 C18 9 15 9 12 9" stroke-linecap="round" stroke-linejoin="round"/></svg>
   <div class="section-label">Un detalle</div>
   <h2 class="section-title display">Sobre los regalos</h2>
@@ -262,6 +277,9 @@
 </section>
 
 <section class="dresscode reveal tone-white">
+  <svg class="section-fern top-left" viewBox="0 0 120 400"><use href="#fern"/></svg>
+  <div class="section-wave top"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><use href="#wave"/></svg></div>
+
   <svg class="section-icon" viewBox="0 0 24 24"><path d="M12 12 L4 6 C3 5.3 3 7 4 9 C5 11 8 12 12 12 C16 12 19 11 20 9 C21 7 21 5.3 20 6 L12 12 Z M12 12 C10 14 9 17 9 19 M12 12 C14 14 15 17 15 19" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.4" fill="var(--gold)"/></svg>
   <div class="section-label">Dress Code</div>
   <h2 class="section-title display">Formal / Elegante</h2>
@@ -271,14 +289,14 @@
       <p>Les pedimos apoyarnos con el dress code para que todo luzca en armonía el día de la celebración.</p>
       <div class="pearl-note">
         <div class="pearl-swatch"></div>
-        <span>La novia vestirá color perla — por favor evitar este tono</span>
+        <span>La novia vestirá color perla </span>
       </div>
     </div>
   </div>
+  <div class="section-wave bottom"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><use href="#wave"/></svg></div>
 </section>
 
 <div class="photo-break">
-  <svg class="photo-fern pf-right" viewBox="0 0 120 400"><use href="#fern"/></svg>
   <div class="photo-card-wrap">
     <div class="photo-card">
       <img src="fotos/Foto-3.jpeg" alt="Hebert y Carol">
