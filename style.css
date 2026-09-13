@@ -13,6 +13,7 @@
   /* SECCIÓN TONO CLARO — alterna con las verdes */
   section.tone-white{
     position:relative;
+    overflow:hidden;
     --bg: #FBF8F0;
     --panel: #F1EAD8;
     --ink: #33301F;
